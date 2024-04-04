@@ -4,23 +4,53 @@ const axios = require('axios');
 
 try {
 
-const api_url = core.getInput('api_url');
-const api_token = core.getInput('api_token');
+const url = core.getInput('url');
+const access_token = core.getInput('access_token');
+const method = core.getInput('method');
+const json_data = core.getInput('json_data');
 
-console.log('api_url:', api_url);
-// console.log('api_token:', api_token);
+console.log('URL:', url, 'Method:', method, 'Json Data:', json_data);
 
-axios.get(api_url, {
+if (method === 'GET') {
+axios.get(url, {
   headers: {
-    'Authorization': `Bearer ${api_token}`,
+    'Authorization': `Bearer ${access_token}`,
     'Content-Type': 'application/json',
     'Accept': 'application/json'
   }
 }).then(response => {
   console.log(response.data);
   core.setOutput('response', response.data);
+  core.setOutput('status', response.status);
 })
+} else if (method === 'POST') {
+axios.post(url, {
+  headers: {
+    'Authorization': `Bearer ${access_token}`,
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+  },
+  data: JSON.stringify(json_data)
 
+}).then(response => {
+  console.log(response.data);
+  core.setOutput('response', response.data);
+  core.setOutput('status', response.status);
+})
+} else if (method === 'PUT') {
+axios.put(url, {
+  headers: {
+    'Authorization': `Bearer ${access_token}`,
+    'Content-Type': 'application/json',
+    'Accept': 'application/json'
+  },
+  data: JSON.stringify(json_data)
+}).then(response => {
+  console.log(response.data);
+  core.setOutput('response', response.data);
+  core.setOutput('status', response.status);
+})
+}
 
 core.startGroup('Logging Api response');
 console.log(JSON.stringify(github.context, null, 2));

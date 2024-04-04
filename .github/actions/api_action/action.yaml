@@ -1,16 +1,26 @@
-name: Get Variables
-description: 'This action is Read input variables'
-author: Nepal Singh
+name: Databricks API Action
+description: 'The custom action provide ability to call Databricks for Automated Deployment'
+author: Nepal Singh (Taapey Labs)
 inputs:
-  api_url:
+  url:
     description: 'Databicks Api'
     required: true
   access_token:
     description: 'PAT for databricks'
     required: true
+  method:
+    description: 'GET/POST/PUT'
+    required: true
+    default: 'GET'
+  json_data:
+    description: 'Data for post Request'
+    required: false
+    default: ''
 outputs:
-  api_response:
-    description: 'resonse from API'
+  response:
+    description: 'Response from API'
+  status:
+    description: 'Status returned by API'
 runs:
   using: 'node20'
   main: 'dist/index.js'
