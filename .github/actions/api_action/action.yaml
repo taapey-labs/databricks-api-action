@@ -1,0 +1,20 @@
+name: Get Variables
+description: 'This action is Read input variables'
+author: Nepal Singh
+inputs:
+  api_url:
+    description: 'Databicks Api'
+    required: true
+  access_token:
+    description: 'PAT for databricks'
+    required: true
+outputs:
+  api_response:
+    description: 'resonse from API'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
+  pre: 'setup.js'
+  pre-if: runner.os == 'linux'
+  post: 'cleanup.js'
+  post-if: runner.os == 'linux'
