@@ -13,8 +13,8 @@ jobs:
         id: call_api
         uses: ./.github/actions/api_action
         with:
-          url: '${{secret.DATABRICKS_API_URL}}'
-          access_token: '${{secret.DATABRICKS_ACCESS_TOKEN}}'
+          url: '${{secrets.DATABRICKS_API_URL}}'
+          access_token: '${{secrets.DATABRICKS_ACCESS_TOKEN}}'
           method: 'GET'
       - name: run echo
         run: echo "Hello first workflow"
