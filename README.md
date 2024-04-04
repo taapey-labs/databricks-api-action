@@ -3,7 +3,7 @@
 ![databricks-api-action](https://github.com/taapey-labs/databricks-api-action/actions/workflow/test.yaml/badge.svg?event=push&branch=main)
 
 
-This repository contains a custom action for GitHub Actions.
+This repository contains a custom action for GitHub.
 
 ## Usage
 
