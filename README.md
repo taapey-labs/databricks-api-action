@@ -1,6 +1,6 @@
 # databricks-api-action
 
-![databricks-api-action](https://github.com/taapey-labs/databricks-api-action/actions/workflow/test.yaml/badge.svg?event=push&branch=main)
+![databricks-api-action](https://github.com/taapey-labs/databricks-api-action/blob/main/.github/workflows/test.yaml/badge.svg?event=push&branch=main)
 
 
 This repository contains a custom action for GitHub.
