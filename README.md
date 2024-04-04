@@ -1,6 +1,6 @@
 # databricks-api-action
 
-[GitHub Marketplace](https://img.shields.io/badge/Marketplace-Databricks%20API%20Action-blue?logo=github)]()
+![databricks-api-action](https://github.com/taapey-labs/databricks-api-action/blob/main/action.yaml/badge.svg?event=push&branch=main)
 
 
 This repository contains a custom action for GitHub Actions.
@@ -11,12 +11,11 @@ To use this action in your workflow, you can add the following step:
 
 ```yaml
 - name: Run Databricks API Action
-  uses: lab/github/databricks-api-action@main
+  uses: actions/databricks-api-action@main
   with:
-    token: ${{ secrets.DATABRICKS_TOKEN }}
-    host: ${{ secrets.DATABRICKS_HOST }}
-    method: GET
-    path: /api/2.0/clusters/list
+    url: '${{secrets.DATABRICKS_API_URL}}'
+    access_token: '${{secrets.DATABRICKS_ACCESS_TOKEN}}'
+    method: 'GET'
 ```
 
 ## Inputs
