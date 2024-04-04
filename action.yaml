@@ -1,6 +1,9 @@
 name: Databricks API Action
 description: 'The custom action provide ability to call Databricks for Automated Deployment'
 author: Nepal Singh (Taapey Labs)
+branding:
+  icon: 'arrow-up-right'
+  color: 'blue'
 inputs:
   url:
     description: 'Databicks Api'
