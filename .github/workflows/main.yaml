@@ -4,6 +4,7 @@ on: [push]
 jobs:
   run-shell-command:
     runs-on: ubuntu-latest
+    environment: dev
     steps:
       - name: Checkout latest code
         uses: actions/checkout@v1
@@ -12,9 +13,10 @@ jobs:
         id: call_api
         uses: ./.github/actions/api_action
         with:
-          api_url: '${{secret.DATABRICKS_API_URL}}'
+          url: '${{secret.DATABRICKS_API_URL}}'
           access_token: '${{secret.DATABRICKS_ACCESS_TOKEN}}'
+          method: 'GET'
       - name: run echo
         run: echo "Hello first workflow"
       - name: print the outputs
-        run: echo ${{steps.call_api.output.api_response}}
+        run: echo Response ${{steps.call_api.output.response}}, status ${{steps.call_api.output.status}}
