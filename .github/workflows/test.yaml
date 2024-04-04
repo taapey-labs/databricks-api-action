@@ -1,0 +1,21 @@
+name: first workflow
+on: [push]
+
+jobs:
+  run-shell-command:
+    runs-on: ubuntu-latest
+    environment: dev
+    steps:
+      - name: Checkout latest code
+        uses: actions/checkout@main
+      - name: call custom action
+        id: call_api
+        uses: ./
+        with:
+          url: '${{secrets.DATABRICKS_API_URL}}'
+          access_token: '${{secrets.DATABRICKS_ACCESS_TOKEN}}'
+          method: 'GET'
+      - name: list files
+        run: ls -ltr
+      - name: print the outputs
+        run: echo Response ${{steps.call_api.outputs.response}}, status ${{steps.call_api.outputs.status}}
