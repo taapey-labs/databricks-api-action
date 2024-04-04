@@ -1,6 +1,6 @@
 # databricks-api-action
 
-![databricks-api-action](https://github.com/taapey-labs/databricks-api-action/blob/main/action.yaml/badge.svg?event=push&branch=main)
+![databricks-api-action](https://github.com/taapey-labs/databricks-api-action/actions/workflow/test.yaml/badge.svg?event=push&branch=main)
 
 
 This repository contains a custom action for GitHub Actions.
@@ -20,8 +20,9 @@ To use this action in your workflow, you can add the following step:
 
 ## Inputs
 
-- `token`: The Databricks API token.
-- `host`: The Databricks host.
+- `access_token`: The Databricks API token.
+- `url`: The Databricks API endpoint.
+- `method`: The HTTP method to use.
 
 ## Outputs
 
