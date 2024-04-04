@@ -17,4 +17,4 @@ jobs:
           access_token: '${{secrets.DATABRICKS_ACCESS_TOKEN}}'
           method: 'GET'
       - name: print the outputs
-        run: echo Response ${{steps.call_api.output.response}}, status ${{steps.call_api.output.status}}
+        run: echo Response ${{steps.call_api.outputs.response}}, status ${{steps.call_api.outputs.status}}
