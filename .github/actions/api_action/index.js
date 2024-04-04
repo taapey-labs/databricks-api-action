@@ -19,7 +19,8 @@ axios.get(url, {
     'Accept': 'application/json'
   }
 }).then(response => {
-  console.log(response.data);
+  console.log('data',response.data);
+  console.log('status',response.status);
   core.setOutput('response', response.data);
   core.setOutput('status', response.status);
 })
@@ -33,7 +34,9 @@ axios.post(url, {
   data: JSON.stringify(json_data)
 
 }).then(response => {
-  console.log(response.data);
+
+  console.log('data',response.data);
+  console.log('status',response.status);
   core.setOutput('response', response.data);
   core.setOutput('status', response.status);
 })
@@ -46,7 +49,8 @@ axios.put(url, {
   },
   data: JSON.stringify(json_data)
 }).then(response => {
-  console.log(response.data);
+  console.log('data',response.data);
+  console.log('status',response.status);
   core.setOutput('response', response.data);
   core.setOutput('status', response.status);
 })
