@@ -4,5 +4,16 @@
     "@actions/github": "^6.0.0",
     "@vercel/ncc": "^0.38.1",
     "axios": "^1.6.8"
-  }
+  },
+  "name": "databricks-api-action",
+  "description": "[GitHub Marketplace](https://img.shields.io/badge/Marketplace-Databricks%20API%20Action-blue?logo=github)]()",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "ncc build index.js -o dist --license licenses.txt"
+  },
+  "author": "",
+  "license": "ISC"
 }

@@ -11,7 +11,7 @@ jobs:
 
       - name: call custom action
         id: call_api
-        uses: ./.github/actions/api_action
+        uses: actions/databricks-api-action@main
         with:
           url: '${{secrets.DATABRICKS_API_URL}}'
           access_token: '${{secrets.DATABRICKS_ACCESS_TOKEN}}'

@@ -1,6 +1,6 @@
 # databricks-api-action
 
-[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-Databricks%20API%20Action-blue?logo=github)]()
+[GitHub Marketplace](https://img.shields.io/badge/Marketplace-Databricks%20API%20Action-blue?logo=github)]()
 
 
 This repository contains a custom action for GitHub Actions.
