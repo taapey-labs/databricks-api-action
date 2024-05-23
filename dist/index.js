@@ -37794,7 +37794,7 @@ let headers = {}
 let jsonData = {};
 
 
-if ((!! core.getInput('jsonDdata')) && (typeof jsonData === 'string')) {
+if ((!! core.getInput('jsonData')) && (typeof jsonData === 'string')) {
   jsonData = JSON.parse(jsonData);
 }
 else {
@@ -37817,7 +37817,7 @@ if (!! core.getInput('accessToken')) {
   headers['Authorization'] = {};
 }
 
-console.log('URL:', url, 'Method:', method, 'Json Data:', json_data);
+console.log('URL:', url, 'Method:', method, 'Json Data:', jsonData);
 
 if (method === 'GET') {
 axios.get(url, {
@@ -37849,7 +37849,7 @@ axios.put(url, {
 })
 }
 
-core.startGroup('Logging Api response');
+core.startGroup('Logging API response');
 console.log(JSON.stringify(github.context, null, 2));
 core.endGroup();
 
