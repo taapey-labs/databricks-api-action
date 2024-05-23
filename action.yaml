@@ -16,10 +16,10 @@ inputs:
     required: true
     default: 'GET'
   jsonData:
-    description: 'Data for post Request'
+    description: 'Data for API Request'
     required: false
   customHeader:
-    description: 'custom Header for Api call'
+    description: 'Custom Header for Api call'
     required: false
 outputs:
   response:

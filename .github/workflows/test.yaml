@@ -8,14 +8,13 @@ jobs:
     steps:
       - name: Checkout latest code
         uses: actions/checkout@main
+
       - name: call custom action
-        id: call_api
+        id: access_api
         uses: ./
         with:
           url: '${{secrets.DATABRICKS_API_URL}}'
           accessToken: '${{secrets.DATABRICKS_ACCESS_TOKEN}}'
           method: 'GET'
-      - name: list files
-        run: ls -ltr
       - name: print the outputs
-        run: echo Response ${{steps.call_api.outputs.response}}, status ${{steps.call_api.outputs.status}}
+        run: echo Response ${{steps.access_api.outputs.response}}, status ${{steps.access_api.outputs.status}}
