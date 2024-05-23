@@ -13,15 +13,18 @@ To use this action in your workflow, you can add the following step:
   uses: actions/databricks-api-action@main
   with:
     url: '${{secrets.DATABRICKS_API_URL}}'
-    access_token: '${{secrets.DATABRICKS_ACCESS_TOKEN}}'
+    accessToken: '${{secrets.DATABRICKS_ACCESS_TOKEN}}'
     method: 'GET'
 ```
 
 ## Inputs
 
-- `access_token`: The Databricks API token.
+- `accessToken`: The Databricks API token.
 - `url`: The Databricks API endpoint.
 - `method`: The HTTP method to use.
+- `jsonData`: The JSON data to send with the request.
+- `customHeaders`: Custom headers to send with the request.
+
 
 ## Outputs
 

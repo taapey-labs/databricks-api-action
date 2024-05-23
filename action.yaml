@@ -6,19 +6,21 @@ branding:
   color: 'blue'
 inputs:
   url:
-    description: 'Databicks Api'
+    description: 'Databicks API URL'
     required: true
-  access_token:
+  accessToken:
     description: 'PAT for databricks'
     required: true
   method:
     description: 'GET/POST/PUT'
     required: true
     default: 'GET'
-  json_data:
+  jsonData:
     description: 'Data for post Request'
     required: false
-    default: ''
+  customHeader:
+    description: 'custom Header for Api call'
+    required: false
 outputs:
   response:
     description: 'Response from API'

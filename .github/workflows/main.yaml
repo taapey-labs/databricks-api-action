@@ -13,7 +13,7 @@ jobs:
         uses: ./
         with:
           url: '${{secrets.DATABRICKS_API_URL}}'
-          access_token: '${{secrets.DATABRICKS_ACCESS_TOKEN}}'
+          accessToken: '${{secrets.DATABRICKS_ACCESS_TOKEN}}'
           method: 'GET'
       - name: list files
         run: ls -ltr
